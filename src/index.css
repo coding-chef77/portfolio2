@@ -31,7 +31,7 @@ body {
   -webkit-font-smoothing: antialiased;
   background-color: var(--background-color);
   color: var(--primary-text);
-  font-family: "Arial", sans-serif;
+  font-family: "Merriweather", sans-serif;
 }
 
 img,
@@ -58,5 +58,6 @@ h4,
 h5,
 h6 {
   overflow-wrap: break-word;
+  font-family: "League Spartan", sans-serif;
   color: var(--verdant-green);
 }
