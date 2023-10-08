@@ -58,6 +58,29 @@ h4,
 h5,
 h6 {
   overflow-wrap: break-word;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: "League Spartan", sans-serif;
   color: var(--verdant-green);
+}
+
+:focus {
+  outline: 2px solid var(--verdant-green);
+}
+
+a {
+  text-decoration: none;
+  color: var(--verdant-green);
+  transition: color 0.3s;
+
+  &:hover,
+  &:focus {
+    color: var(--accent-teal);
+  }
 }
