@@ -1,4 +1,5 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import GlobalStyle from "./assets/GlobalStyles";
 import NavBar from "./NavBar";
 import HeroPage from "./pages/HeroPage";
 import AboutPage from "./pages/AboutPage";
@@ -12,6 +13,7 @@ import Footer from "./components/Footer";
 function App() {
   return (
     <BrowserRouter>
+      <GlobalStyle />
       <NavBar />
       <Routes>
         <Route path="/" element={<HeroPage />} />

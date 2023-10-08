@@ -1,3 +1,6 @@
+import { createGlobalStyle } from "styled-components";
+
+const GlobalStyle = createGlobalStyle`
 *,
 *::before,
 *::after {
@@ -84,3 +87,7 @@ a {
     color: var(--accent-teal);
   }
 }
+
+`;
+
+export default GlobalStyle;
