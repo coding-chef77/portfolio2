@@ -1,27 +1,35 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
-const NavBar = () => {
+const NavBar = ({ onNavigate }) => {
   return (
     <Wrapper>
       <StyledList>
         <StyledListItem>
-          <StyledLink to="/">Hjem</StyledLink>
+          <StyledButton onClick={() => onNavigate(null)}>Hjem</StyledButton>
         </StyledListItem>
         <StyledListItem>
-          <StyledLink to="/about">Om Meg</StyledLink>
+          <StyledButton onClick={() => onNavigate("about")}>
+            Om Meg
+          </StyledButton>
         </StyledListItem>
         <StyledListItem>
-          <StyledLink to="/projects">Prosjekter</StyledLink>
+          <StyledButton onClick={() => onNavigate("projects")}>
+            Prosjekter
+          </StyledButton>
         </StyledListItem>
         <StyledListItem>
-          <StyledLink to="/cv">CV</StyledLink>
+          <StyledButton onClick={() => onNavigate("cv")}>CV</StyledButton>
+        </StyledListItem>
+        <StyledListItem>
+          <StyledButton onClick={() => onNavigate("contact")}>
+            ContactPage
+          </StyledButton>
         </StyledListItem>
       </StyledList>
     </Wrapper>
   );
 };
-
 const Wrapper = styled.nav`
   background-color: var(--verdant-green);
   padding: 1rem 2rem;
@@ -39,8 +47,10 @@ const StyledListItem = styled.li`
   margin: 0 1rem;
 `;
 
-const StyledLink = styled(Link)`
-  text-decoration: none;
+const StyledButton = styled.button`
+  background: none;
+  border: none;
+  cursor: pointer;
   color: var(--background-color);
   font-weight: bold;
   transition: color 0.3s;
@@ -49,5 +59,9 @@ const StyledLink = styled(Link)`
     color: var(--yellow-accent);
   }
 `;
+
+NavBar.propTypes = {
+  onNavigate: PropTypes.func.isRequired,
+};
 
 export default NavBar;
