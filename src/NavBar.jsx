@@ -6,23 +6,27 @@ const NavBar = ({ onNavigate }) => {
     <Wrapper>
       <StyledList>
         <StyledListItem>
-          <StyledButton onClick={() => onNavigate(null)}>Hjem</StyledButton>
+          <StyledButton onClick={() => onNavigate({ page: null })}>
+            Hjem
+          </StyledButton>
         </StyledListItem>
         <StyledListItem>
-          <StyledButton onClick={() => onNavigate("about")}>
+          <StyledButton onClick={() => onNavigate({ page: "about" })}>
             Om Meg
           </StyledButton>
         </StyledListItem>
         <StyledListItem>
-          <StyledButton onClick={() => onNavigate("projects")}>
+          <StyledButton onClick={() => onNavigate({ page: "projects" })}>
             Prosjekter
           </StyledButton>
         </StyledListItem>
         <StyledListItem>
-          <StyledButton onClick={() => onNavigate("cv")}>CV</StyledButton>
+          <StyledButton onClick={() => onNavigate({ page: "cv" })}>
+            CV
+          </StyledButton>
         </StyledListItem>
         <StyledListItem>
-          <StyledButton onClick={() => onNavigate("contact")}>
+          <StyledButton onClick={() => onNavigate({ page: "contact" })}>
             ContactPage
           </StyledButton>
         </StyledListItem>
@@ -37,7 +41,7 @@ const Wrapper = styled.nav`
 
 const StyledList = styled.ul`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   list-style: none;
   padding: 0;
   margin: 0;

@@ -15,7 +15,7 @@ function App() {
   const [activePage, setActivePage] = useState({ page: null, projectId: null });
 
   const renderPage = () => {
-    switch (activePage) {
+    switch (activePage.page) {
       case "about":
         return <AboutPage />;
       case "projects":
@@ -32,13 +32,15 @@ function App() {
   };
 
   return (
-    <>
+    <AppContainer>
       <GlobalStyle />
       <NavBar onNavigate={setActivePage} />
-      <HeroPage onNavigate={setActivePage} />
-      {activePage && <OverlayContent>{renderPage()}</OverlayContent>}
+      <MainContent>
+        <HeroPage onNavigate={setActivePage} />
+        {activePage.page && <OverlayContent>{renderPage()}</OverlayContent>}
+      </MainContent>
       <Footer />
-    </>
+    </AppContainer>
   );
 }
 
@@ -51,9 +53,19 @@ const Overlay = styled.div`
   max-width: 800px;
   height: auto;
   margin: auto;
-  background-color: var(--yellow-accent); // Semi-transparent white
-  z-index: 10; // Ensure it's on top
-  overflow-y: auto; // Allow scrolling if content is long
+  background-color: var(--yellow-accent);
+  z-index: 10;
+  overflow-y: auto;
+`;
+
+const AppContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`;
+
+const MainContent = styled.div`
+  flex: 1;
 `;
 
 const OverlayContent = ({ children }) => {
@@ -61,7 +73,7 @@ const OverlayContent = ({ children }) => {
 };
 
 OverlayContent.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node,
 };
 
 export default App;
