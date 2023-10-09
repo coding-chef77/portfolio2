@@ -3,7 +3,7 @@ import styled from "styled-components";
 function Footer() {
   return (
     <FooterWrapper>
-      <FooterText>Coded by Heine Günther {new Date().getFullYear()}</FooterText>
+      <FooterText>Kodet av Heine Günther {new Date().getFullYear()}</FooterText>
       <FooterBar />
     </FooterWrapper>
   );
