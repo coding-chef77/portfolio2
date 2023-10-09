@@ -35,7 +35,7 @@ function App() {
     <>
       <GlobalStyle />
       <NavBar onNavigate={setActivePage} />
-      <HeroPage />
+      <HeroPage onNavigate={setActivePage} />
       {activePage && <OverlayContent>{renderPage()}</OverlayContent>}
       <Footer />
     </>
