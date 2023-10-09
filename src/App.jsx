@@ -6,7 +6,7 @@ import NavBar from "./NavBar";
 import HeroPage from "./pages/HeroPage";
 import AboutPage from "./pages/AboutPage";
 import ProjectModalPage from "./pages/ProjectModalPage";
-// import SingelProjectPage from "./pages/SingelProjectPage";
+import SingelProjectPage from "./pages/SingelProjectPage";
 import ContactPage from "./pages/ContactPage";
 import CVPage from "./pages/CV/CVPage";
 import Footer from "./components/Footer";
@@ -20,8 +20,8 @@ function App() {
         return <AboutPage />;
       case "projects":
         return <ProjectModalPage />;
-      // case "singleProject":
-      //   return <SingelProjectPage projectId={activePage.projectId} />;
+      case "singleProject":
+        return <SingelProjectPage projectId={activePage.projectId} />;
       case "cv":
         return <CVPage />;
       case "contact":
