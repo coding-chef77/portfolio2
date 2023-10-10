@@ -27,7 +27,7 @@ const NavBar = ({ onNavigate }) => {
         </StyledListItem>
         <StyledListItem>
           <StyledButton onClick={() => onNavigate({ page: "contact" })}>
-            ContactPage
+            Kontakt Meg
           </StyledButton>
         </StyledListItem>
       </StyledList>

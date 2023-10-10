@@ -53,7 +53,6 @@ const Overlay = styled.div`
   max-width: 800px;
   height: auto;
   margin: auto;
-  background-color: var(--yellow-accent);
   z-index: 10;
   overflow-y: auto;
 `;
