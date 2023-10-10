@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import cvData from "./resumeData";
 import avatar from "./avatar.png";
+import PropTypes from "prop-types";
+import isPropValid from "@emotion/is-prop-valid";
 
 const CVPage = () => {
   return (
@@ -121,17 +123,20 @@ const CVPage = () => {
 
 const KompetanseSection = ({ title, items }) => {
   return (
-    <section
-      className={`kompetanse-list ${items.length > 4 ? "two-columns" : ""}`}
-    >
+    <KompetanseList hasTwoColumns={items.length > 4}>
       <h4>{title}</h4>
       <ul>
         {items.map((item, index) => (
           <li key={index}>{item}</li>
         ))}
       </ul>
-    </section>
+    </KompetanseList>
   );
+};
+
+KompetanseSection.propTypes = {
+  title: PropTypes.string.isRequired,
+  items: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 const Wrapper = styled.div`
@@ -233,7 +238,9 @@ const EducationEntry = styled.div`
 
 const KompetanseContainer = styled.article``;
 
-const KompetanseList = styled.section`
+const KompetanseList = styled.section.withConfig({
+  shouldForwardProp: (prop) => isPropValid(prop) && prop !== "hasTwoColumns",
+})`
   display: flex;
   gap: 20px;
   margin-bottom: 20px;
@@ -250,10 +257,12 @@ const KompetanseList = styled.section`
     column-count: 1;
     column-gap: 20px;
 
-    &.two-columns {
+    ${({ hasTwoColumns }) =>
+      hasTwoColumns &&
+      `
       column-count: 2;
       flex-basis: 300px;
-    }
+    `}
   }
 `;
 
