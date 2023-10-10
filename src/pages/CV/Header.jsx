@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import cvData from "./resumeData";
 import avatar from "./avatar.png";
-import { FaHome, FaEnvelope, FaLinkedin, FaPhoneAlt } from "react-icons/fa";
 
 const Header = () => {
   return (
@@ -14,17 +13,18 @@ const Header = () => {
         </div>
       </AvatarSection>
       <StyledAddress>
-        <StyledHomeIcon />
-        <p>{cvData.header.address.street}</p>
-
+        <AdressIcon>
+          <i className="fas fa-home"></i>
+          <p>{cvData.header.address.street}</p>
+        </AdressIcon>
         <p>
-          <FaEnvelope />
+          <i className="fas fa-envelope"></i>
           <a href={`mailto:${cvData.header.address.email}`}>
             {cvData.header.address.email}
           </a>
         </p>
         <p>
-          <FaLinkedin />
+          <i className="fab fa-linkedin"></i>
           <a
             href={cvData.header.address.linkedIn}
             target="_blank"
@@ -34,7 +34,7 @@ const Header = () => {
           </a>
         </p>
         <p>
-          <FaPhoneAlt />
+          <i className="fas fa-phone-alt"></i>
           <a href={`tel:${cvData.header.address.phone.replace(/\s/g, "")}`}>
             {cvData.header.address.phone}
           </a>
@@ -69,11 +69,13 @@ const StyledAddress = styled.address`
     margin-bottom: 8px;
   }
 
-  svg {
+  i {
     margin-right: 5px;
     color: #555;
-    display: inline;
   }
+
+  i:first-of-type {
+    margin-bottom: +8px;
 
   a {
     color: #0077cc;
@@ -86,10 +88,10 @@ const StyledAddress = styled.address`
   }
 `;
 
-const StyledHomeIcon = styled(FaHome)`
-  display: inline;
-  line-height: 2.5;
-  vertical-align: middle;
+const AdressIcon = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
 `;
 
 const StyledImg = styled.img`
