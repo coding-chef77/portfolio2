@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useState } from "react";
+import { FaTimes } from "react-icons/fa";
 import PropTypes from "prop-types";
 import GlobalStyle from "./assets/GlobalStyles";
 import NavBar from "./NavBar";
@@ -31,13 +32,21 @@ function App() {
     }
   };
 
+  const handleCloseOverlay = () => {
+    setActivePage({ page: null });
+  };
+
   return (
     <AppContainer>
       <GlobalStyle />
       <NavBar onNavigate={setActivePage} />
       <MainContent>
         <HeroPage onNavigate={setActivePage} />
-        {activePage.page && <OverlayContent>{renderPage()}</OverlayContent>}
+        {activePage.page && (
+          <OverlayContent onClose={handleCloseOverlay}>
+            {renderPage()}
+          </OverlayContent>
+        )}
       </MainContent>
       <Footer />
     </AppContainer>
@@ -67,12 +76,27 @@ const MainContent = styled.div`
   flex: 1;
 `;
 
-const OverlayContent = ({ children }) => {
-  return <Overlay>{children}</Overlay>;
+const CloseIcon = styled(FaTimes)`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 24px;
+  z-index: 11;
+`;
+
+const OverlayContent = ({ children, onClose }) => {
+  return (
+    <Overlay>
+      <CloseIcon onClick={onClose} />
+      {children}
+    </Overlay>
+  );
 };
 
 OverlayContent.propTypes = {
   children: PropTypes.node,
+  onClose: PropTypes.func.isRequired,
 };
 
 export default App;

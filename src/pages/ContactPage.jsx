@@ -58,14 +58,14 @@ const ContactPage = () => {
             <StyledInput
               placeholder="Navn"
               {...register("from_name")}
-              error={Boolean(errors.from_name)}
+              error={errors.subject ? "true" : undefined}
             />
             <ErrorMessage>{errors.from_name && "Navn er påkrevd"}</ErrorMessage>
 
             <StyledInput
               placeholder="Emne"
               {...register("subject")}
-              error={Boolean(errors.subject)}
+              error={errors.subject ? "true" : undefined}
             />
             <ErrorMessage>{errors.subject && "Emne er påkrevd"}</ErrorMessage>
 
@@ -73,7 +73,7 @@ const ContactPage = () => {
               placeholder="Melding"
               {...register("message")}
               rows="4"
-              error={Boolean(errors.message)}
+              error={errors.subject ? "true" : undefined}
             />
             <ErrorMessage>
               {errors.message && "Melding er påkrevd"}
@@ -82,7 +82,7 @@ const ContactPage = () => {
             <StyledInput
               placeholder="Epost-adresse"
               {...register("reply_to")}
-              error={Boolean(errors.reply_to)}
+              error={errors.subject ? "true" : undefined}
             />
             <ErrorMessage>
               {errors.reply_to && "Vennligst skriv inn en gyldig e-postadresse"}
