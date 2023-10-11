@@ -10,8 +10,8 @@ const HeroPage = ({ onNavigate }) => {
         meg til å skape intuitive og engasjerende brukeropplevelser. La oss
         samarbeide for å bringe dine digitale prosjekter til liv!
       </p>
-      <CTAButton onClick={() => onNavigate({ page: "projects" })}>
-        Prosjekter
+      <CTAButton onClick={() => onNavigate({ page: "contact" })}>
+        Kontakt Meg
       </CTAButton>
     </Wrapper>
   );
@@ -20,7 +20,7 @@ const HeroPage = ({ onNavigate }) => {
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   padding: 20px;
   max-width: 600px;
@@ -30,6 +30,7 @@ const Wrapper = styled.div`
 const CTAButton = styled.button`
   background-color: var(--verdant-green);
   color: var(--background-color);
+  margin-top: 25px;
   padding: 10px 20px;
   border: none;
   border-radius: 5px;
