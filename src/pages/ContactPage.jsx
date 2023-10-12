@@ -101,11 +101,9 @@ const ContactPage = () => {
 };
 
 const MainContainer = styled.div`
-  margin: 6px 0;
-  max-width: 600px;
-  width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 6px auto;
+  padding: 0 15px; // Add some padding for small screens
+  max-width: clamp(300px, 100%, 600px);
 `;
 
 const StyledCard = styled.div`

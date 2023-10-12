@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 const HeroPage = ({ onNavigate }) => {
   return (
     <Wrapper>
-      <h1>På jakt etter min neste utfordring som frontend-utvikler.</h1>
+      <h1>På jakt etter min neste utfordring som frontend-utvikler</h1>
       <p>
         Med en lidenskap for kreativ kode og moderne design, har jeg dedikert
         meg til å skape intuitive og engasjerende brukeropplevelser. La oss
@@ -22,6 +22,8 @@ const Wrapper = styled.div`
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  height: 100vh;
+  width: 100vw;
   padding: 20px;
   max-width: 600px;
   margin: 0 auto;

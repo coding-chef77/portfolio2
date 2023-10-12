@@ -16,6 +16,10 @@ body {
   height: 100%;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 #root {
   isolation: isolate;
   /* Primary Colors */

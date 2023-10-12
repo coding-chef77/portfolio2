@@ -6,7 +6,7 @@ import GlobalStyle from "./assets/GlobalStyles";
 import NavBar from "./NavBar";
 import HeroPage from "./pages/HeroPage";
 import AboutPage from "./pages/AboutPage";
-import ProjectModalPage from "./pages/ProjectModalPage";
+import ProjectsPage from "./pages/projects/ProjectsPage";
 import SingelProjectPage from "./pages/SingelProjectPage";
 import ContactPage from "./pages/ContactPage";
 import CVPage from "./pages/CV/CVPage";
@@ -20,7 +20,7 @@ function App() {
       case "about":
         return <AboutPage />;
       case "projects":
-        return <ProjectModalPage />;
+        return <ProjectsPage />;
       case "singleProject":
         return <SingelProjectPage projectId={activePage.projectId} />;
       case "cv":
@@ -38,7 +38,6 @@ function App() {
 
   return (
     <AppContainer>
-      <GlobalStyle />
       <NavBar onNavigate={setActivePage} />
       <MainContent>
         <HeroPage onNavigate={setActivePage} />
@@ -48,7 +47,9 @@ function App() {
           </OverlayContent>
         )}
       </MainContent>
+      <ProjectsPage />
       <Footer />
+      <GlobalStyle />
     </AppContainer>
   );
 }
