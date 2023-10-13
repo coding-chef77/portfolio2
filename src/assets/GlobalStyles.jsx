@@ -75,6 +75,12 @@ h5,
 h6 {
   font-family: "League Spartan", sans-serif;
   color: var(--verdant-green);
+ 
+}
+
+h1 {
+  // font-size: 5vw;
+  text-shadow: 3px 4px 0 rgba(0,0,0,0.2);
 }
 
 :focus {

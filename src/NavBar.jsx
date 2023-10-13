@@ -35,8 +35,12 @@ const NavBar = ({ onNavigate }) => {
   );
 };
 const Wrapper = styled.nav`
-  background-color: var(--verdant-green);
   padding: 1rem 2rem;
+  position: absolute; // Add this line
+  top: 0; // Add this line
+  left: 0; // Add this line
+  right: 0; // Add this line
+  z-index: 1000; // Add this line to ensure the navbar is always on top
 `;
 
 const StyledList = styled.ul`
@@ -55,12 +59,12 @@ const StyledButton = styled.button`
   background: none;
   border: none;
   cursor: pointer;
-  color: var(--background-color);
+  color: var(--verdant-green);
   font-weight: bold;
   transition: color 0.3s;
 
   &:hover {
-    color: var(--yellow-accent);
+    color: var(--ccent-teal);
   }
 `;
 
