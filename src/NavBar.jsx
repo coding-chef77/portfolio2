@@ -42,7 +42,7 @@ const Wrapper = styled.nav`
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 32px 0;
+  padding: 32px 24px;
 `;
 
 const Logo = styled.div`

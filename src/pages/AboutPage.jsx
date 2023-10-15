@@ -15,9 +15,9 @@ const AboutPage = () => {
   return (
     <Wrapper>
       <div>
-        <h3>Litt om meg - the coding chef!</h3>
+        <h2>Litt om meg - the coding chef!</h2>
       </div>
-      <div>
+      <Content>
         <p>
           Hei, jeg heter Heine Günther. Etter en variert karriere innen mat og
           logistikk, bestemte jeg meg for å bytte karrierevei og har nylig
@@ -36,11 +36,11 @@ const AboutPage = () => {
           Sjekk ut noen av prosjektene mine og ta kontakt i kontaktskjemaet
           nedenfor. Jeg ser fra til å høre fra deg!.
         </p>
-        <h4>Ferdigheter:</h4>
+        <h3>Ferdigheter:</h3>
         <p>{skillsets.join(", ")}</p>
-        <h4>Verktøy for prosjektstyring:</h4>
+        <h3>Verktøy for prosjektstyring:</h3>
         <p>{projectManagementTools.join(", ")}</p>
-      </div>
+      </Content>
     </Wrapper>
   );
 };
@@ -48,6 +48,15 @@ const AboutPage = () => {
 const Wrapper = styled.div`
   min-height: 400px;
   min-width: 400px;
-  background-color: var(--yellow-accent);
+  background-color: var(--background-color);
+  padding: 42px;
+  border: 3px solid var(--yellow-accent);
+  border-radius: 8px;
 `;
+
+const Content = styled.div`
+  padding: 20px;
+  border-left: 5px solid var(--yellow-accent);
+`;
+
 export default AboutPage;
