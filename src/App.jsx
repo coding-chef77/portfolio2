@@ -7,7 +7,6 @@ import NavBar from "./NavBar";
 import HeroPage from "./pages/HeroPage";
 import AboutPage from "./pages/AboutPage";
 import ProjectsPage from "./pages/projects/ProjectsPage";
-import SingelProjectPage from "./pages/SingelProjectPage";
 import ContactPage from "./pages/ContactPage";
 import CVPage from "./pages/CV/CVPage";
 import Footer from "./components/Footer";
@@ -21,8 +20,6 @@ function App() {
         return <AboutPage />;
       case "projects":
         return <ProjectsPage />;
-      case "singleProject":
-        return <SingelProjectPage projectId={activePage.projectId} />;
       case "cv":
         return <CVPage />;
       case "contact":
@@ -70,12 +67,15 @@ const Overlay = styled.div`
 const AppContainer = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  position: relative;
 `;
 
 const MainContent = styled.div`
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 `;
 
 const CloseIcon = styled(FaTimes)`

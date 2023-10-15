@@ -4,12 +4,8 @@ import PropTypes from "prop-types";
 const NavBar = ({ onNavigate }) => {
   return (
     <Wrapper>
+      <Logo onClick={() => onNavigate({ page: null })}>HG</Logo>
       <StyledList>
-        <StyledListItem>
-          <StyledButton onClick={() => onNavigate({ page: null })}>
-            Hjem
-          </StyledButton>
-        </StyledListItem>
         <StyledListItem>
           <StyledButton onClick={() => onNavigate({ page: "about" })}>
             Om Meg
@@ -35,17 +31,30 @@ const NavBar = ({ onNavigate }) => {
   );
 };
 const Wrapper = styled.nav`
-  padding: 1rem 2rem;
-  position: absolute; // Add this line
-  top: 0; // Add this line
-  left: 0; // Add this line
-  right: 0; // Add this line
-  z-index: 1000; // Add this line to ensure the navbar is always on top
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1001; // This ensures the navbar is above other content
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 0;
+`;
+
+const Logo = styled.div`
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--verdant-green);
+  cursor: pointer;
 `;
 
 const StyledList = styled.ul`
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -53,6 +62,7 @@ const StyledList = styled.ul`
 
 const StyledListItem = styled.li`
   margin: 0 1rem;
+  font-weight: 700;
 `;
 
 const StyledButton = styled.button`

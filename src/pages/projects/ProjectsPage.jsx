@@ -106,6 +106,9 @@ const Wrapper = styled.div`
   justify-content: center;
   flex-wrap: wrap;
   gap: 20px;
+  max-width: 1200px;
+  padding: 96px 0;
+  margin: 0 auto;
 `;
 
 const Card = styled.div`

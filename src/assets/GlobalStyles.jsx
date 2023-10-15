@@ -78,9 +78,8 @@ h6 {
  
 }
 
-h1 {
-  // font-size: 5vw;
-  text-shadow: 3px 4px 0 rgba(0,0,0,0.2);
+p {
+  color: #444;
 }
 
 :focus {

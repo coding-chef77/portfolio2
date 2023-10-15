@@ -69,7 +69,7 @@ const StyledImg = styled.img`
 const Main = styled.main`
   display: flex;
   justify-content: space-between;
-  gap: 20px;
+  gap: 40px;
   padding-top: 20px;
 `;
 
@@ -77,6 +77,7 @@ const ProfilContainer = styled.section`
   margin-top: 25px;
   display: flex;
   flex-direction: column;
+  flex: 1;
   .profil h2 {
     margin-bottom: 25px;
   }
@@ -99,13 +100,15 @@ const EducationEntry = styled.div`
   margin-bottom: 20px;
 `;
 
-const KompetanseContainer = styled.article``;
+const KompetanseContainer = styled.article`
+  overflow: hidden;
+`;
 
 const KompetanseList = styled.section.withConfig({
   shouldForwardProp: (prop) => isPropValid(prop) && prop !== "hasTwoColumns",
 })`
   display: flex;
-  gap: 20px;
+  gap: 5px;
   margin-bottom: 20px;
 
   h4 {
@@ -118,7 +121,7 @@ const KompetanseList = styled.section.withConfig({
     padding-left: 0;
     line-height: 1.6;
     column-count: 1;
-    column-gap: 20px;
+    // column-gap: 20px;
 
     ${({ hasTwoColumns }) =>
       hasTwoColumns &&
@@ -148,7 +151,7 @@ const ErfaringContainer = styled.section`
   margin-top: 25px;
   border-left: 2px solid #d8d8d8;
   padding-left: 20px;
-
+  flex: 1;
   h2 {
     margin-bottom: 25px;
   }
