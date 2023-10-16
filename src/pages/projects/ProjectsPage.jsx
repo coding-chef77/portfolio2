@@ -1,117 +1,148 @@
 import styled from "styled-components";
 import { FaGithub } from "react-icons/fa";
+import { motion } from "framer-motion";
 import image from "../../assets/web_upload.png";
 import imageTwinChat from "../../assets/twinChat.png";
+import imageAnalytic from "../../assets/tekst-analytiker.png";
 
 const ProjectsPage = () => {
+  const containerVariants = {
+    hidden: {
+      opacity: 0,
+      y: 20,
+    },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 1,
+      },
+    },
+  };
   return (
-    <Wrapper>
-      <Card>
-        <Image src={imageTwinChat} alt="something" />
-        <CardContent>
-          <Title>SoMe Project</Title>
-          <Description>
-            Dette prosjektet var min avsluttende eksamen der målet var å lage en
-            sosial medieplattform. Siden jeg selv har tvillinger, tenkte jeg at
-            det ville være en god idé å rette meg mot foreldre med tvillinger.
-            Dette er mitt første prosjekt ved bruk av Material UI, og jeg likte
-            fleksibiliteten. Vennligst klikk enten på GitHub-linken for
-            fullstendige detaljer eller knappen nedenfor for å sjekke det ut i
-            nettleseren din. Prosjektet er basert på API-dokumentasjonen levert
-            av Noroff og inkluderer funksjoner som brukerregistrering,
-            innlogging, profilhåndtering, oppretting av innlegg, oppretting av
-            kommentarer og mer.
-          </Description>
-          <Links>
-            <a
-              href={
-                "https://github.com/Noroff-FEU-Assignments/project-exam-2-heine5150.git"
-              }
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaGithub size={24} />
-            </a>
-            <ProjectLink
-              href={"https://exam-2-twin-chat.vercel.app/"}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Project
-            </ProjectLink>
-          </Links>
-        </CardContent>
-      </Card>
-      <Card>
-        <Image src={image} alt="something" />
-        <CardContent>
-          <Title>Project Name</Title>
-          <Description>This is a brief description of the project.</Description>
-          <Links>
-            <a
-              href={"https://github.com/your_username/project_name"}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaGithub size={24} />
-            </a>
-            <ProjectLink
-              href={"https://deployed_project_link.com"}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Project
-            </ProjectLink>
-          </Links>
-        </CardContent>
-      </Card>
-      <Card>
-        <Image src={image} alt="something" />
-        <CardContent>
-          <Title>Project Name</Title>
-          <Description>This is a brief description of the project.</Description>
-          <Links>
-            <a
-              href={"https://github.com/your_username/project_name"}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaGithub size={24} />
-            </a>
-            <ProjectLink
-              href={"https://deployed_project_link.com"}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Project
-            </ProjectLink>
-          </Links>
-        </CardContent>
-      </Card>
-      <Card>
-        <Image src={image} alt="something" />
-        <CardContent>
-          <Title>Project Name</Title>
-          <Description>This is a brief description of the project.</Description>
-          <Links>
-            <a
-              href={"https://github.com/your_username/project_name"}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <FaGithub size={24} />
-            </a>
-            <ProjectLink
-              href={"https://deployed_project_link.com"}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              View Project
-            </ProjectLink>
-          </Links>
-        </CardContent>
-      </Card>
-    </Wrapper>
+    <motion.div initial="hidden" animate="visible" variants={containerVariants}>
+      <Wrapper>
+        <Card>
+          <Image src={imageTwinChat} alt="something" />
+          <CardContent>
+            <Title>SoMe Project</Title>
+            <Description>
+              Dette prosjektet var min avsluttende eksamen der målet var å lage
+              en sosial medieplattform. Siden jeg selv har tvillinger, tenkte
+              jeg at det ville være en god idé å rette meg mot foreldre med
+              tvillinger. Dette er mitt første prosjekt ved bruk av Material UI,
+              og jeg likte fleksibiliteten. Vennligst klikk enten på
+              GitHub-linken for fullstendige detaljer eller knappen nedenfor for
+              å sjekke det ut i nettleseren din. Prosjektet er basert på
+              API-dokumentasjonen levert av Noroff og inkluderer funksjoner som
+              brukerregistrering, innlogging, profilhåndtering, oppretting av
+              innlegg, oppretting av kommentarer og mer.
+            </Description>
+            <Links>
+              <a
+                href={
+                  "https://github.com/Noroff-FEU-Assignments/project-exam-2-heine5150.git"
+                }
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaGithub size={24} />
+              </a>
+              <ProjectLink
+                href={"https://exam-2-twin-chat.vercel.app/"}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Project
+              </ProjectLink>
+            </Links>
+          </CardContent>
+        </Card>
+        <Card>
+          <Image src={imageAnalytic} alt="something" />
+          <CardContent>
+            <Title>Tekstanalytiker</Title>
+            <Description>
+              {" "}
+              Det er en modell som er trent på et datasett med filmanmeldelser
+              og brukes til å klassifisere tekst som enten positiv eller
+              negativ. Modellen bruker en variant av BERT-arkitekturen kalt
+              DistilBERT, som er designet for å være mer ressurseffektiv og
+              mindre i størrelse enn den originale BERT-modellen. Denne modellen
+              kan være nyttig for oppgaver som involverer å identifisere eller
+              filtrere ut tekst som er positiv eller negativ i tone. Modellen er
+              fra HuggingFace.
+            </Description>
+            <Links>
+              <a
+                href={"https://github.com/your_username/project_name"}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaGithub size={24} />
+              </a>
+              <ProjectLink
+                href={"https://cerulean-stardust-668c8f.netlify.app/"}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Project
+              </ProjectLink>
+            </Links>
+          </CardContent>
+        </Card>
+        <Card>
+          <Image src={image} alt="something" />
+          <CardContent>
+            <Title>Project Name</Title>
+            <Description>
+              This is a brief description of the project.
+            </Description>
+            <Links>
+              <a
+                href={"https://github.com/your_username/project_name"}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaGithub size={24} />
+              </a>
+              <ProjectLink
+                href={"https://deployed_project_link.com"}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Project
+              </ProjectLink>
+            </Links>
+          </CardContent>
+        </Card>
+        <Card>
+          <Image src={image} alt="something" />
+          <CardContent>
+            <Title>Project Name</Title>
+            <Description>
+              This is a brief description of the project.
+            </Description>
+            <Links>
+              <a
+                href={"https://github.com/your_username/project_name"}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaGithub size={24} />
+              </a>
+              <ProjectLink
+                href={"https://deployed_project_link.com"}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View Project
+              </ProjectLink>
+            </Links>
+          </CardContent>
+        </Card>
+      </Wrapper>
+    </motion.div>
   );
 };
 
