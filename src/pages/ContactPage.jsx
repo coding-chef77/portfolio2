@@ -92,7 +92,11 @@ const ContactPage = () => {
               <FaPaperPlane />
               {loading ? "Loading..." : "Send"}
             </SubmitButton>
-            {message && <Message>{message}</Message>}
+            {message && (
+              <Message success={message === "Takk for at du tar kontakt!"}>
+                {message}
+              </Message>
+            )}
           </form>
         </StyledCardContent>
       </StyledCard>
@@ -107,8 +111,8 @@ const MainContainer = styled.div`
 `;
 
 const StyledCard = styled.div`
-  background-color: #363636;
-  border: 2px solid #f27735;
+  background-color: var(--background-color);
+  border: 2px solid var(--yellow-accent);
   box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
   position: relative;
 `;
@@ -128,7 +132,8 @@ const StyledInput = styled.input`
   padding: 8px;
   margin: 8px 0;
   box-sizing: border-box;
-  background-color: #ddeeff;
+  background-color: var(--secondary-text);
+  color: #fff;
 `;
 
 const StyledTextArea = styled.textarea`
@@ -136,7 +141,8 @@ const StyledTextArea = styled.textarea`
   padding: 8px;
   margin: 8px 0;
   box-sizing: border-box;
-  background-color: #ddeeff;
+  background-color: var(--secondary-text);
+  color: #fff;
   resize: vertical; // Allows the user to resize the textarea vertically
 `;
 
@@ -149,6 +155,16 @@ const SubmitButton = styled.button`
   align-items: center;
   gap: 8px;
   margin-top: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--verdant-green);
+  color: var(--background-color);
+
+  &:hover {
+    background-color: var(--accent-teal);
+    color: black;
+  }
 `;
 
 const Message = styled.p`

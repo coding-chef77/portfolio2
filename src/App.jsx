@@ -39,7 +39,10 @@ function App() {
       <MainContent>
         <HeroPage onNavigate={setActivePage} />
         {activePage.page && (
-          <OverlayContent onClose={handleCloseOverlay}>
+          <OverlayContent
+            onClose={handleCloseOverlay}
+            closeIconPosition="top-right"
+          >
             {renderPage()}
           </OverlayContent>
         )}
@@ -80,17 +83,26 @@ const MainContent = styled.div`
 
 const CloseIcon = styled(FaTimes)`
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: ${(props) => (props.position === "top-right" ? "45px" : "auto")};
+  right: ${(props) => (props.position === "top-right" ? "30px" : "auto")};
+  bottom: ${(props) => (props.position === "bottom-right" ? "40px" : "auto")};
   cursor: pointer;
   font-size: 24px;
   z-index: 11;
 `;
 
+const OverlayHeader = styled.div`
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px;
+`;
+
 const OverlayContent = ({ children, onClose }) => {
   return (
     <Overlay>
-      <CloseIcon onClick={onClose} />
+      <OverlayHeader>
+        <CloseIcon onClick={onClose} position="top-right" />
+      </OverlayHeader>
       {children}
     </Overlay>
   );

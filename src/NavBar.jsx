@@ -12,11 +12,6 @@ const NavBar = ({ onNavigate }) => {
           </StyledButton>
         </StyledListItem>
         <StyledListItem>
-          <StyledButton onClick={() => onNavigate({ page: "projects" })}>
-            Prosjekter
-          </StyledButton>
-        </StyledListItem>
-        <StyledListItem>
           <StyledButton onClick={() => onNavigate({ page: "cv" })}>
             CV
           </StyledButton>
