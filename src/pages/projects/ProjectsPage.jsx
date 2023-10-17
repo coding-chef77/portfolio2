@@ -1,9 +1,10 @@
 import styled from "styled-components";
 import { FaGithub } from "react-icons/fa";
 import { motion } from "framer-motion";
-import image from "../../assets/web_upload.png";
+import squareeyes from "../../assets/squareeues.png";
 import imageTwinChat from "../../assets/twinChat.png";
 import imageAnalytic from "../../assets/tekst-analytiker.png";
+import wordpressCa from "../../assets/wordpress.png";
 
 const ProjectsPage = () => {
   const containerVariants = {
@@ -92,22 +93,29 @@ const ProjectsPage = () => {
           </CardContent>
         </Card>
         <Card>
-          <Image src={image} alt="something" />
+          <Image src={wordpressCa} alt="something" />
           <CardContent>
-            <Title>Project Name</Title>
+            <Title>JS/React prosject</Title>
             <Description>
-              This is a brief description of the project.
+              Dette er et React-rammeprosjekt som inkorporerer Bootstrap for å
+              levere et funksjonelt, men enkelt grensesnitt. Hovedmålet med
+              dette prosjektet er å etablere sømløs routing for enkel navigasjon
+              og sikre riktig validering av skjemaer og funksjonalitet for
+              innloggingsformularet. For mer informasjon, kan du se detaljene
+              via Github-lenken.
             </Description>
             <Links>
               <a
-                href={"https://github.com/your_username/project_name"}
+                href={
+                  "https://github.com/coding-chef77/-js-frameworks-course-assignment"
+                }
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <FaGithub size={24} />
               </a>
               <ProjectLink
-                href={"https://deployed_project_link.com"}
+                href={"https://jade-bonbon-07e78e.netlify.app/"}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -117,9 +125,9 @@ const ProjectsPage = () => {
           </CardContent>
         </Card>
         <Card>
-          <Image src={image} alt="something" />
+          <Image src={squareeyes} alt="something" />
           <CardContent>
-            <Title>Project Name</Title>
+            <Title>Square Eyes</Title>
             <Description>
               This is a brief description of the project.
             </Description>
