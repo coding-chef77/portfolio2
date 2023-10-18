@@ -1,12 +1,24 @@
+import { useRef } from "react";
 import styled from "styled-components";
 import { FaGithub } from "react-icons/fa";
+import { useInView } from "react-intersection-observer";
 import { motion } from "framer-motion";
 import squareeyes from "../../assets/squareeues.png";
 import imageTwinChat from "../../assets/twinChat.png";
 import imageAnalytic from "../../assets/tekst-analytiker.png";
 import wordpressCa from "../../assets/wordpress.png";
 
+// const containerRef = useRef();
+// const [inViewRef, inView] = useInView({
+//   triggerOnce: true,
+// });
+
 const ProjectsPage = () => {
+  const containerRef = useRef();
+  const [inViewRef, inView] = useInView({
+    triggerOnce: true,
+  });
+
   const containerVariants = {
     hidden: {
       opacity: 0,
@@ -21,7 +33,15 @@ const ProjectsPage = () => {
     },
   };
   return (
-    <motion.div initial="hidden" animate="visible" variants={containerVariants}>
+    <motion.div
+      ref={(element) => {
+        containerRef.current = element;
+        inViewRef(element);
+      }}
+      initial={inView ? "visible" : "hidden"}
+      animate={inView ? "visible" : "hidden"}
+      variants={containerVariants}
+    >
       <Wrapper>
         <Card>
           <Image src={imageTwinChat} alt="something" />
@@ -158,7 +178,7 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 25px;
   max-width: 1200px;
   padding: 96px 0;
   margin: 0 auto;
